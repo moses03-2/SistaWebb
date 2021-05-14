@@ -1,0 +1,120 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to right, hsl(196, 90%, 50%), hsl(305, 100%, 50%));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.klocka{
+    width: 500px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+}
+
+.klocka .nummer{
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+}
+
+.klocka .nummer1{ --rotation: 30deg}
+.klocka .nummer2{ --rotation: 60deg}
+.klocka .nummer3{ --rotation: 90deg}
+.klocka .nummer4{ --rotation: 120deg}
+.klocka .nummer5{ --rotation: 150deg}
+.klocka .nummer6{ --rotation: 180deg}
+.klocka .nummer7{ --rotation: 210deg}
+.klocka .nummer8{ --rotation: 240deg}
+.klocka .nummer9{ --rotation: 270deg}
+.klocka .nummer10{ --rotation: 300deg}
+.klocka .nummer11 {--rotation: 330deg}
+
+.klocka .visare{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: black;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.klocka::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.klocka .visare.sekund{
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+
+.klocka .visare.minut{
+    width: 7px;
+    height: 40%;
+    background-color: black;
+}
+
+.klocka .visare.timme{
+    width: 10px;
+    height: 35%;
+    background-color: black;
+}
+
+@media only screen and (max-width: 707px) {
+    
+    .klocka{
+    width: 400px;
+    height: 400px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    
+    .klocka{
+    width: 300px;
+    height: 300px;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    
+    .klocka{
+    width: 200px;
+    height: 200px;
+    }
+}
+
+@media only screen and (max-width: 270px) {
+    
+    .klocka{
+    width: 150px;
+    height: 150px;
+    }
+}
